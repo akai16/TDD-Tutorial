@@ -27,7 +27,7 @@ class NewVisitorTest(LiveServerTestCase):
       except (AssertionError, WebDriverException) as e:
         if time.time() - start_time > MAX_WAIT:
           raise e
-        time.sleep(0.5)
+        time.sleep(1)
 
 
   def test_can_start_a_list_and_retrieve_it_later(self):
@@ -102,6 +102,7 @@ class NewVisitorTest(LiveServerTestCase):
 
     # Chicão start a new list by entering a new item.
     # He is less intersting that Iara
+    inputbox = self.browser.find_element_by_id('id_new_item')
     inputbox.send_keys('Buy milk')
     inputbox.send_keys(Keys.ENTER)
     self.wait_for_row_in_list_table('1: Buy milk')
