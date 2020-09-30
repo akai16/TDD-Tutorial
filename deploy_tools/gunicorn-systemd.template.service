@@ -5,7 +5,7 @@ Description=Gunicorn server for SITENAME
 Restart=on-failure
 User=saint
 WorkingDirectory=/home/saint/sites/SITENAME/src
-ExecStart=/home/saint/sites/SITENAME/virtualenv/bin/gunicorn \
+ExecStart=/home/saint/sites/SITENAME/venv/bin/gunicorn \
 --bind unix:/tmp/SITENAME.socket superlists.wsgi:application
 
 [Install]
